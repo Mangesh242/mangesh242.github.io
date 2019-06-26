@@ -1,11 +1,62 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>
-Welcome
-</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
 </head>
 <body>
-Hello nikita
-<body>
 
+<h2 style="text-align:center">User Profile Card</h2>
+
+<div class="card">
+  <img src="data:image/jpeg;base64,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" alt="John" style="width:100%">
+  <h1>John Doe</h1>
+  <p class="title">CEO & Founder, Example</p>
+  <p>Harvard University</p>
+  <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+  </div>
+  <p><button>Contact</button></p>
+</div>
+
+</body>
 </html>
